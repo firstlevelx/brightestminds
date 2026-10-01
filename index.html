@@ -56,7 +56,7 @@ section{padding-block:clamp(64px,9vw,120px)}
 .hero{padding-block:clamp(40px,6vw,80px) clamp(48px,7vw,96px)}
 .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,64px);align-items:center}
 .hero-copy{display:grid;gap:1.6rem;min-width:0}
-.hero h1{overflow-wrap:anywhere;hyphens:auto;font-size:clamp(2.3rem,5.4vw,4.6rem);line-height:.95;font-weight:800;letter-spacing:-.035em}
+.hero h1{overflow-wrap:normal;hyphens:manual;font-size:clamp(2.1rem,4.6vw,4.1rem);line-height:.95;font-weight:800;letter-spacing:-.035em}
 .hero h1 .num{font-variant-numeric:tabular-nums}
 .hero .lede{font-size:1.18rem;color:var(--muted);max-width:52ch}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:.8rem}
@@ -98,6 +98,60 @@ section{padding-block:clamp(64px,9vw,120px)}
 .c-foot small{font:500 .68rem/1.2 var(--f-mono);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
 .c-note{padding:8px 18px;font:400 .7rem var(--f-mono);color:var(--muted);background:var(--sunk)}
 
+/* pricing wide + calculator */
+.plan-wide{grid-template-columns:auto 1fr;gap:clamp(24px,5vw,72px);align-items:start}
+.plan-wide .plan-l{display:grid;gap:22px;align-content:start;position:relative;z-index:1}
+.plan-wide ul{grid-template-columns:1fr 1fr;gap:14px 28px}
+@media (max-width:900px){.plan-wide{grid-template-columns:1fr}.plan-wide ul{grid-template-columns:1fr}}
+.rc-head{display:grid;grid-template-columns:1fr 1fr;gap:24px 56px;align-items:start;margin-bottom:clamp(28px,4vw,44px)}
+.rc-head h2{font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.02;max-width:14ch}
+.rc-head p{color:var(--muted);font-size:1.15rem;max-width:44ch;padding-top:6px}
+@media (max-width:820px){.rc-head{grid-template-columns:1fr}}
+.rc{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media (max-width:900px){.rc{grid-template-columns:1fr}}
+.rc-in{background:var(--sunk);border:1px solid var(--line);border-radius:22px;padding:clamp(24px,3.5vw,40px);display:grid;gap:30px;align-content:center;min-width:0}
+.rc-in .field label{font:500 1.02rem var(--f-body)}
+.rc-in .field label output{font:700 1.3rem var(--f-display);font-variant-numeric:tabular-nums}
+.rc-in input[type=range]{-webkit-appearance:none;appearance:none;height:8px;border-radius:8px;background:linear-gradient(var(--cta),var(--cta)) 0/var(--p,50%) 100% no-repeat,var(--line);outline-offset:6px}
+.rc-in input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--cta);border:0;box-shadow:0 2px 8px -2px var(--cta);cursor:pointer}
+.rc-in input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--cta);border:0;cursor:pointer}
+.rc-out{background:var(--ink);color:var(--bg);border-radius:22px;padding:clamp(24px,3.5vw,40px);display:grid;gap:22px;align-content:start;min-width:0;position:relative;overflow:hidden}
+.rc-out::after{content:"";position:absolute;right:-140px;top:-160px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,var(--hot-a),transparent 65%);opacity:.22;pointer-events:none}
+.rc-out > *{position:relative;z-index:1}
+.rc-out span{display:block;font-size:1rem;opacity:.75;margin-bottom:6px}
+.rc-main{padding-bottom:22px;border-bottom:1px solid color-mix(in srgb,var(--bg) 18%,transparent)}
+.rc-main b{font:800 clamp(4rem,9vw,6.2rem)/.9 var(--f-display);letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.rc-row{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.rc-row b{font:800 clamp(1.9rem,3.6vw,2.8rem)/1 var(--f-display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.rc-bench{font-size:.92rem;opacity:.75;max-width:52ch}
+.rc-btn{justify-self:start;background:var(--bg);color:var(--ink)}
+@media (max-width:460px){.rc-row{grid-template-columns:1fr}}
+/* hero calendar */
+.cal{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:0 40px 80px -40px rgba(13,16,40,.35);overflow:hidden;min-width:0}
+.cal-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.cal-top b{font:600 1rem var(--f-display);margin-right:10px}
+@media (max-width:560px){.cal-top div span{display:none}}
+.cal-top div span{font:500 .75rem var(--f-mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.cal-badge{display:inline-flex;align-items:center;gap:6px;font:500 .75rem var(--f-mono);color:var(--good);background:color-mix(in srgb,var(--good) 12%,transparent);padding:6px 10px;border-radius:999px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.cal-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--good);animation:pulse 1.6s infinite}
+.cal-grid{--row:58px;display:grid;grid-template-columns:44px repeat(5,1fr);padding:0 10px 12px 0}
+.cal-times{display:grid;grid-template-rows:34px repeat(8,var(--row));font:500 .66rem var(--f-mono);color:var(--muted);text-align:right;padding-right:8px}
+.cal-times span{transform:translateY(-.5em)}
+.cal-day{position:relative;display:grid;grid-template-rows:34px repeat(8,var(--row));border-left:1px solid var(--line);background-image:linear-gradient(var(--line) 1px,transparent 1px);background-size:100% var(--row);background-position:0 34px;min-width:0}
+.cal-day .dh{display:grid;place-items:center;font:600 .78rem var(--f-body);color:var(--muted);border-bottom:1px solid var(--line);background:var(--surface)}
+.mtg{position:absolute;left:3px;right:3px;border-radius:8px;padding:5px 6px;display:grid;gap:1px;align-content:start;overflow:hidden;font-size:.68rem;line-height:1.25;animation:mtgIn .55s cubic-bezier(.2,.9,.3,1.3) both}
+.mtg b{font:600 .72rem/1.2 var(--f-body);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mtg span{opacity:.8;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:.64rem}
+.mtg .t{font:500 .6rem var(--f-mono);opacity:.7}
+.mtg.c1{background:color-mix(in srgb,var(--hot-a) 14%,var(--surface));color:var(--ink);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--hot-a) 30%,transparent)}
+.mtg.c2{background:color-mix(in srgb,var(--cta) 13%,var(--surface));color:var(--ink);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--cta) 30%,transparent)}
+.mtg.c3{background:color-mix(in srgb,var(--hot-b) 15%,var(--surface));color:var(--ink);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--hot-b) 32%,transparent)}
+.mtg.new{box-shadow:0 0 0 2px var(--good),0 8px 20px -6px color-mix(in srgb,var(--good) 60%,transparent)}
+.mtg.out{animation:mtgOut .4s ease both}
+@keyframes mtgIn{from{opacity:0;transform:scale(.7) translateY(6px)}to{opacity:1;transform:none}}
+@keyframes mtgOut{to{opacity:0;transform:scale(.9)}}
+.cal-note{padding:8px 18px;font:400 .7rem var(--f-mono);color:var(--muted);background:var(--sunk)}
+@media (max-width:560px){.cal-grid{grid-template-columns:40px repeat(3,1fr)}.cal-day.d4,.cal-day.d5{display:none}}
 /* logos */
 .logos-box{padding-block:28px 40px;border-block:1px solid var(--line)}
 .marquee-win{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
@@ -121,6 +175,22 @@ section{padding-block:clamp(64px,9vw,120px)}
 .dm-wall li.more .plus{font-size:1.6em;line-height:1}
 @media (max-width:860px){.dm-grid{grid-template-columns:1fr}}
 @media (max-width:420px){.dm-wall{grid-template-columns:repeat(2,1fr)}}
+.proofbar{padding-block:8px 0}
+.pb-grid{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--line)}
+.pb{display:grid;gap:8px;align-content:start;padding:32px 24px 30px;border-right:1px solid var(--line);min-width:0}
+.pb:first-child{padding-left:0}.pb:last-child{border-right:0;padding-right:0}
+.pb b{font:800 clamp(2rem,3.4vw,2.9rem)/1 var(--f-display);letter-spacing:-.035em;font-variant-numeric:tabular-nums}
+.pb .what{font:600 1rem/1.35 var(--f-body)}
+.pb .who{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.86rem;margin-top:6px}
+a.pb{text-decoration:none;color:inherit;transition:background .2s}
+a.pb:hover{background:var(--surface)}
+a.pb .go{font-weight:600;font-size:.86rem;color:var(--cta);margin-top:4px}
+a.pb:hover .go{text-decoration:underline}
+.pb .who img{width:32px;height:32px;border-radius:50%;object-fit:cover;background:var(--sunk);flex:none}
+.pb .who .zm{width:32px;height:32px;border-radius:50%;overflow:hidden;flex:none;background:#fff}
+.pb .who .zm img{transform:scale(1.5);transform-origin:50% 35%;border-radius:0}
+@media (max-width:980px){.pb-grid{grid-template-columns:1fr 1fr}.pb{padding:26px 20px}.pb:nth-child(odd){padding-left:0}.pb:nth-child(2){border-right:0;padding-right:0}.pb:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media (max-width:460px){.pb-grid{grid-template-columns:1fr}.pb{border-right:0!important;padding-inline:0!important;border-bottom:1px solid var(--line)}.pb:last-child{border-bottom:0}}
 /* ledger */
 .ledger{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
 .lrow{display:grid;grid-template-columns:72px 1.1fr 1fr 1fr 1.6fr;gap:20px;align-items:center;padding:20px 24px;border-bottom:1px solid var(--line)}
@@ -199,6 +269,9 @@ td.us{background:color-mix(in srgb,var(--cta) 8%,transparent)}
 .dots{display:inline-flex;gap:4px}
 .dots i{width:10px;height:10px;border-radius:3px;background:var(--line)}
 .dots i.on{background:var(--muted)}
+.ctext{font-size:.9rem;color:var(--muted);display:block;max-width:26ch}
+td.us .ctext{color:var(--ink);font-weight:600}
+td{vertical-align:top}
 td.us .dots i.on{background:linear-gradient(135deg,var(--hot-a),var(--hot-b))}
 
 /* proof */
@@ -208,7 +281,9 @@ td.us .dots i.on{background:linear-gradient(135deg,var(--hot-a),var(--hot-b))}
 .growth img{height:56px;width:auto}
 .growth p{color:var(--muted);font-size:.92rem}
 .awards{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(28px,6vw,72px);margin-top:48px;padding:28px;border-radius:var(--r);background:#FFFFFF;border:1px solid var(--line)}
-.awards img{height:64px;width:auto}
+.awards img{height:64px;width:auto;display:block}
+.awards a{display:block;border-radius:8px;transition:transform .2s}
+.awards a:hover{transform:translateY(-2px)}
 
 /* quotes */
 .quotes{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
@@ -318,6 +393,7 @@ td.us .dots i.on{background:linear-gradient(135deg,var(--hot-a),var(--hot-b))}
 .faq summary{cursor:pointer;list-style:none;padding:22px 0;font:600 1.12rem var(--f-display);display:flex;justify-content:space-between;gap:1rem}
 .faq summary::after{content:"+";font:400 1.4rem/1 var(--f-mono);color:var(--muted);transition:transform .2s}
 .faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p a{color:var(--cta);font-weight:600}
 .faq details p{padding-bottom:22px;color:var(--muted);max-width:68ch}
 
 /* cta */
@@ -351,6 +427,7 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line);margin-top:clamp
       <li><a href="cases.html">Case studies</a></li>
       <li><a href="#how">How it works</a></li>
       <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#calculator">Calculator</a></li>
       <li><a href="#compare">Compare</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
@@ -364,37 +441,40 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line);margin-top:clamp
     <div class="hero-copy">
       <span class="eyebrow">LinkedIn SDRs for B2B revenue teams</span>
       <h1>Meetings with the decision‑makers you can't reach.<br><span class="hot">$3,000 a&nbsp;month.</span></h1>
-      <p class="lede">Three SDRs with developed business profiles run your LinkedIn outreach end to end. We test your messaging until it earns one of the highest reply rates in your industry, then book qualified meetings straight into your calendar.</p>
+      <p class="lede">Every prospect has 100s of behavior patterns that predict replies. Our weekly data science hackathons find the ones that convert, and our SDRs engage 1,000+ prospects a month, guaranteed.</p>
       <div class="ctas">
         <a class="btn btn-primary" href="https://calendly.com/anthony-brightestminds/30min" target="_blank" rel="noopener">Get a free GTM strategy session →</a>
         <a class="btn btn-ghost" href="#results">See client results</a>
       </div>
-      <div class="offer-line"><span>Top reply rates in your industry</span><span>Qualified meetings on your calendar</span><span>Top 3% SDRs, hackathon‑selected</span></div>
+      <div class="offer-line"><span>1,000+ prospects engaged monthly, guaranteed</span><span>100s of behavior patterns per prospect</span><span>Reply probability maximized weekly</span></div>
     </div>
 
-    <div class="console" aria-label="Illustrative outreach console">
-      <div class="c-top"><span class="live">Outreach · <b>this week</b></span><span>3 SDRs active</span></div>
-      <div class="profiles">
-        <div class="prof"><div class="av" style="background:var(--ink);color:var(--bg)">S1</div><div class="meta"><div class="name">SDR 1 · Pain diagnostician</div><div class="bar"><i data-w="100"></i></div></div><span class="cnt" data-c="200">0/200</span></div>
-        <div class="prof"><div class="av" style="background:linear-gradient(135deg,var(--hot-a),var(--hot-b))">S2</div><div class="meta"><div class="name">SDR 2 · Persona identifier</div><div class="bar"><i data-w="100"></i></div></div><span class="cnt" data-c="200">0/200</span></div>
-        <div class="prof"><div class="av" style="background:var(--cta)">S3</div><div class="meta"><div class="name">SDR 3 · Value vanguard</div><div class="bar"><i data-w="100"></i></div></div><span class="cnt" data-c="200">0/200</span></div>
+    <div class="cal" aria-label="Example calendar of meetings booked by BrightestMinds">
+      <div class="cal-top">
+        <div><b>Your calendar</b><span>In a few weeks</span></div>
+        <span class="cal-badge"><span class="dot"></span><span id="cal-count">0</span>&nbsp;meetings booked</span>
       </div>
-      <ul class="feed" id="feed"></ul>
-      <div class="c-foot">
-        <div><b id="k1">600</b><small>Touches this week</small></div>
-        <div><b>A/B</b><small>Variants live</small></div>
-        <div><b>1:1</b><small>Coach support</small></div>
+      <div class="cal-grid">
+        <div class="cal-times"><span></span><span>9 AM</span><span>10</span><span>11</span><span>12</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+        <div class="cal-day" data-d="0"><span class="dh">Mon</span></div>
+        <div class="cal-day" data-d="1"><span class="dh">Tue</span></div>
+        <div class="cal-day" data-d="2"><span class="dh">Wed</span></div>
+        <div class="cal-day d4" data-d="3"><span class="dh">Thu</span></div>
+        <div class="cal-day d5" data-d="4"><span class="dh">Fri</span></div>
       </div>
-      <div class="c-note">Illustrative feed. Names and companies are placeholders.</div>
+      <div class="cal-note">Example week. Roles and companies are illustrative.</div>
     </div>
   </div>
 </section>
 
-<div class="logos wrap" aria-label="Clients"><div class="logos-box">
-  <p class="eyebrow">100+ companies have run outbound with BrightestMinds</p>
-  <div class="marquee-win"><div class="marquee" id="marquee">
-    <img src="img/brand_rackspace.svg" alt="Rackspace"><img src="img/brand_ibm.svg" alt="IBM"><img src="img/brand_freshwork.svg" alt="Freshworks"><img src="img/brand_spotahome.svg" alt="Spotahome"><img src="img/brand_swetcoin.svg" alt="Sweatcoin"><img src="img/brand_guidecx.svg" alt="GuideCX"><img src="img/brand_cora.svg" alt="Cora"><img src="img/brand_avarobotics.svg" alt="Ava Robotics"><img src="img/brand_mylearning.svg" alt="MyLearning"><img src="img/brand_wunderflats.svg" alt="Wunderflats"><img src="img/brand_currencyfair.svg" alt="CurrencyFair"><img src="img/brand_mailcon.svg" alt="Mailcon"><img src="img/brand_coachhub.svg" alt="CoachHub"><img src="img/brand_competera.svg" alt="Competera"><img src="img/brand_promorepublic.svg" alt="PromoRepublic">
-  </div></div>
+<div class="proofbar wrap" id="results" aria-label="Client results">
+  <div class="pb-grid">
+    <a class="pb" href="case-guidecx.html"><b>$834,769</b><span class="what">closed‑won ARR at GUIDEcx</span><span class="who"><img src="img/user5.webp" alt="">Todd White, Co‑founder &amp; VP Sales</span><span class="go">Read the case study →</span></a>
+    <a class="pb" href="case-mylearninghub.html"><b>$12.5M</b><span class="what">pipeline at My Learning Hub</span><span class="who"><span class="zm"><img src="img/user3.webp" alt=""></span>Thomas Bellamy, Business Development</span><span class="go">Read the case study →</span></a>
+    <a class="pb" href="case-hyperc.html"><b>$5M+</b><span class="what">in sales opportunities at HyperC</span><span class="who"><img src="img/user2.webp" alt="">Andrew Gree, CEO</span><span class="go">Read the case study →</span></a>
+    <a class="pb" href="case-cidersoft.html"><b>$1M+</b><span class="what">in closed deals at CiderSoft</span><span class="who"><span class="zm"><img src="img/user1.webp" alt=""></span>Ilya Lipovich, CEO</span><span class="go">Read the case study →</span></a>
+  </div>
+</div>
 </div></div>
 
 <section class="dm" aria-labelledby="dm-h">
@@ -420,15 +500,15 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line);margin-top:clamp
       <p>One in‑house rep is capped by LinkedIn's weekly limits, nobody runs real tests, and you still carry salary, tools and management.</p>
     </div>
     <div style="display:grid;gap:28px;min-width:0">
-      <div class="limit" aria-label="Weekly outreach capacity">
-        <span class="eyebrow">Weekly outreach capacity</span>
-        <div class="row"><span>One in‑house SDR</span><div class="bar muted"><i data-w="33"></i></div><span class="cap mono">1×</span></div>
-        <div class="row"><span><b>BrightestMinds</b></span><div class="bar"><i data-w="100"></i></div><span class="cap mono"><b>3×</b></span></div>
-        <span class="fine">Three SDRs with developed business profiles.</span>
+      <div class="limit" aria-label="Monthly outreach capacity">
+        <span class="eyebrow">Monthly outreach capacity</span>
+        <div class="row"><span>One in‑house SDR</span><div class="bar muted"><i data-w="33"></i></div><span class="cap mono">1 rep</span></div>
+        <div class="row"><span><b>BrightestMinds team</b></span><div class="bar"><i data-w="100"></i></div><span class="cap mono"><b>1,000–3,000</b></span></div>
+        <span class="fine">Our SDR team guarantees 1,000+ prospects engaged every month, typically 1,000–3,000.</span>
       </div>
       <div class="problems">
         <div class="problem"><span class="k">Cap</span><div><h3>Hard to scale</h3><p>LinkedIn's connection and message limits cap what a single SDR can send.</p></div></div>
-        <div class="problem"><span class="k">A/B</span><div><h3>No structured testing</h3><p>Most SDR teams never set up a system to test hooks, personas and offers against each other.</p></div></div>
+        <div class="problem"><span class="k">?%</span><div><h3>Guesswork targeting</h3><p>Most SDR teams pick prospects by job title and never measure which behavior patterns actually make people reply.</p></div></div>
         <div class="problem"><span class="k mono">$7K</span><div><h3>Expensive</h3><p>Salary, tools and overhead often run $2k–$7k per SDR per month before a single meeting.</p></div></div>
       </div>
     </div>
@@ -439,24 +519,21 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line);margin-top:clamp
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">How it works</span>
-      <h2>Hackathon‑tested SDRs, matched to your market.</h2>
-      <p>Every SDR earns their seat in our GTM Hackathons and keeps sharpening there each week.</p>
+      <h2>Data science picks your next best prospects, every week.</h2>
+      <p>Top SDRs do the outreach. Every week, our data science hackathon tells them exactly who to reach next.</p>
     </div>
     <div class="steps">
-      <div class="step"><span class="n">Step 1 · Selection</span><h3>We pick the champions</h3><p>SDRs are handpicked through GTM Hackathons. Only the top 3% of applicants make it.</p></div>
-      <div class="step"><span class="n">Step 2 · Training</span><h3>They train on your market</h3><p>Weekly hackathons keep every SDR on the latest LinkedIn plays, with AI deep research on your ICP &amp; UVP.</p></div>
+      <div class="step"><span class="n">Step 1 · Selection</span><h3>We pick the top SDRs</h3><p>Only the top 3% of applicants make it onto your team.</p></div>
+      <div class="step"><span class="n">Step 2 · Weekly data science</span><h3>We find this week's best prospects</h3><p>Every week we compare 100s of prospects and their companies' unique data points to identify the next most converting prospects, guided by AI deep research on your ICP &amp; UVP.</p></div>
       <div class="step"><span class="n">Step 3 · Deployment</span><h3>They start booking</h3><p>We match SDRs to your market and time zone. They plug into your calendar and report activity every week.</p></div>
     </div>
     <div class="ds-band">
-      <div class="ds-num"><span class="hot">100s</span><small>of buying patterns analyzed</small></div>
+      <div class="ds-num"><span class="hot">100s</span><small>of behavior patterns per prospect</small></div>
       <div class="ds-txt">
-        <span class="eyebrow">Data science targeting</span>
-        <h3>We find the prospects most likely to need your offer before anyone sends a message.</h3>
-        <p>Our data science capability scores every prospect on hundreds of patterns, from hiring and growth signals to tech stack and role changes. Your SDRs start with the accounts that have the highest probability of buying, so more conversations turn into meetings.</p>
+        <span class="eyebrow">Weekly data science hackathons</span>
+        <h3>Every prospect has 100s of behavior patterns with a clear reply probability. We maximize it.</h3>
+        <p>Each week our data science team compares 100s of patterns across prospects and their companies to find the ones that convert best. Your SDRs then go after the prospects with the highest reply probability that week, and the model gets sharper with every reply.</p>
       </div>
-    </div>
-    <div class="archetypes" aria-label="SDR archetypes">
-      <span>Business Pain Diagnostician</span><span>No‑to‑Yes Navigator</span><span>Unique Value Vanguard</span><span>Data‑Driven Decision Maker</span><span>Needs‑Focused Personalizer</span><span>Ideal Persona Identifier</span>
     </div>
   </div>
 </section>
@@ -466,37 +543,52 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line);margin-top:clamp
     <div class="sec-head">
       <span class="eyebrow">Pricing</span>
       <h2>More meetings for less than one in‑house hire.</h2>
-      <p>One flat monthly price. Run the numbers with your own conversion rates.</p>
+      <p>One flat monthly price for the whole team.</p>
     </div>
-    <div class="price-grid">
-      <div class="plan">
+    <div class="plan plan-wide">
+      <div class="plan-l">
         <span class="eyebrow">LinkedIn SDR team</span>
         <div class="amt">$3,000<small> / month</small></div>
-        <ul>
-          <li>Qualified meetings with decision‑makers, booked into your calendar</li>
-          <li>Messaging tested until it reaches one of the highest reply rates in your industry</li>
-          <li>3 SDRs with developed business profiles</li>
-          <li>AI deep research on your ICP &amp; UVP</li>
-          <li>Data science that scores prospects on 100s of patterns, so outreach goes to the buyers most likely to need your offer</li>
-          <li>Weekly results reports: replies, meetings, pipeline</li>
-          <li>Unlimited support from experienced SDR coaches</li>
-          <li>Coverage in USA, Europe and Asia time zones</li>
-        </ul>
         <a class="btn" href="https://calendly.com/anthony-brightestminds/30min" target="_blank" rel="noopener">Book a strategy call →</a>
       </div>
-      <form class="calc" id="calc" novalidate>
-        <span class="eyebrow">Pipeline calculator</span>
-        <div class="field"><label for="c-cost">In‑house SDR cost per month <output id="o-cost"></output></label><input id="c-cost" type="range" min="2000" max="12000" step="250" value="7000"></div>
-        <div class="field"><label for="c-acc">Connection acceptance rate <output id="o-acc"></output></label><input id="c-acc" type="range" min="3" max="60" step="1" value="25"></div>
-        <div class="field"><label for="c-rep">Positive reply rate (of accepted) <output id="o-rep"></output></label><input id="c-rep" type="range" min="1" max="40" step="1" value="10"></div>
-        <div class="field"><label for="c-bk">Replies that book a meeting <output id="o-bk"></output></label><input id="c-bk" type="range" min="0" max="60" step="1" value="30"></div>
-        <div class="results">
-          <div><b id="r-mtg">0</b><small>Meetings / month</small></div>
-          <div><b id="r-cpm">$0</b><small>Cost per meeting</small></div>
-          <div class="save"><b id="r-save">$0</b><small>Saved vs 3 in‑house SDRs / yr</small></div>
-        </div>
-        <p class="fine">Based on about 2,600 touches a month from 3 SDRs at full weekly capacity. The rates are your own estimates, not a guarantee.</p>
+      <ul>
+        <li>Qualified meetings with decision‑makers, booked into your calendar</li>
+        <li>Prospects picked on 100+ behavior patterns, with reply probability maximized every week</li>
+        <li>Guaranteed: 1,000+ prospects engaged every month</li>
+        <li>An SDR team with developed business profiles</li>
+        <li>AI deep research on your ICP &amp; UVP</li>
+        <li>Weekly data science hackathons to find your highest‑converting behavior patterns</li>
+        <li>Weekly results reports: replies, meetings, pipeline</li>
+        <li>Unlimited support from experienced SDR coaches</li>
+        <li>Coverage in USA, Europe and Asia time zones</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="calculator" style="padding-top:0">
+  <div class="wrap">
+    <div class="rc-head">
+      <h2>Run the numbers with your own rates.</h2>
+      <p>Our SDR team engages 1,000–3,000 prospects a month. Move the sliders to match what you see in your market.</p>
+    </div>
+    <div class="rc">
+      <form class="rc-in" id="calc" novalidate>
+        <div class="field"><label for="c-vol">Prospects engaged per month <output id="o-vol"></output></label><input id="c-vol" type="range" min="1000" max="3000" step="100" value="2600"></div>
+        <div class="field"><label for="c-cost">In‑house SDR cost per month <output id="o-cost"></output></label><input id="c-cost" type="range" min="2000" max="12000" step="250" value="4000"></div>
+        <div class="field"><label for="c-acc">Connection acceptance rate <output id="o-acc"></output></label><input id="c-acc" type="range" min="3" max="60" step="1" value="18"></div>
+        <div class="field"><label for="c-rep">Positive reply rate, of accepted <output id="o-rep"></output></label><input id="c-rep" type="range" min="1" max="20" step="1" value="8"></div>
+        <div class="field"><label for="c-bk">Positive replies that book a meeting <output id="o-bk"></output></label><input id="c-bk" type="range" min="0" max="100" step="1" value="65"></div>
       </form>
+      <div class="rc-out" aria-live="polite">
+        <div class="rc-main"><span>Meetings per month</span><b id="r-mtg">0</b></div>
+        <div class="rc-row">
+          <div><span>Cost per meeting</span><b id="r-cpm">$0</b></div>
+          <div><span>Saved vs. an in‑house team of three SDRs, per year</span><b id="r-save">$0</b></div>
+        </div>
+        <p class="rc-bench">Industry benchmark: appointment‑setting agencies typically charge $150 to $750 per booked appointment (Prospeo, 2026). Your rates are estimates, not a guarantee.</p>
+        <a class="btn rc-btn" href="https://calendly.com/anthony-brightestminds/30min" target="_blank" rel="noopener">Get a forecast for your market</a>
+      </div>
     </div>
   </div>
 </section>
@@ -510,7 +602,7 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line);margin-top:clamp
     </div>
     <div class="tbl-wrap">
       <table id="cmp">
-        <thead><tr><th>Capability</th><th class="us">BrightestMinds</th><th>Multichannel SDRs</th><th>AI SDRs</th></tr></thead>
+        <thead><tr><th>Capability</th><th class="us">Brightest Minds SDRs</th><th>Multichannel SDRs</th><th>AI SDRs</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
@@ -529,23 +621,7 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line);margin-top:clamp
       <div class="growth"><img src="img/growth3.webp" alt="Wunderflats, $34M+ raised"><h3>Wunderflats</h3><p>Series A. $34M+ raised.</p></div>
     </div>
     <div class="awards" aria-label="Recognition">
-      <img src="img/award3.webp" alt="Clutch 4.9 out of 5"><img src="img/award2.webp" alt="Forbes Technology Council official member"><img src="img/award1.webp" alt="Emblaze">
-    </div>
-  </div>
-</section>
-
-<section id="results" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">What clients say</span>
-      <h2>Our clients call it their best channel.</h2>
-    </div>
-    <div class="quotes">
-      <figure class="quote wide"><blockquote>“<strong>$834,769 in closed‑won ARR</strong>, 100+ deals closed and $4 million in sales opportunities.”</blockquote><figcaption><img src="img/user5.webp" alt=""><div><b>Todd White</b><span>Co‑founder &amp; VP Sales, GUIDEcx</span></div></figcaption></figure>
-      <figure class="quote wide"><blockquote>“<strong>$12.5M pipeline, $2.5M in deals paid</strong>, $4.4M lifetime LTV. One of our best producing channels.”</blockquote><figcaption><img src="img/user3.webp" alt=""><div><b>Thomas Bellamy</b><span>Business Development, My Learning Hub</span></div></figcaption></figure>
-      <figure class="quote"><blockquote>“BrightestMinds played a crucial role in HyperC's growth, helping us generate <strong>over $5 million in sales opportunities</strong> and 300+ booked calls. 90% of our revenue now comes from their leads.”</blockquote><figcaption><img src="img/user2.webp" alt=""><div><b>Andrew Gree</b><span>CEO, HyperC</span></div></figcaption></figure>
-      <figure class="quote"><blockquote>“<strong>$3 million in sales pipeline and over $1 million in closed deals</strong> delivered by the BrightestMinds team. Top performing channel for us.”</blockquote><figcaption><img src="img/user1.webp" alt=""><div><b>Ilya Lipovich</b><span>CEO, Cidersoft</span></div></figcaption></figure>
-      <figure class="quote"><blockquote>“Within the first two months we got <strong>over $50k in sales opportunities</strong> and 20+ booked meetings.”</blockquote><figcaption><img src="img/user4.webp" alt=""><div><b>Jordan Schneider</b><span>Head of Marketing, Boombox</span></div></figcaption></figure>
+      <a href="https://clutch.co/profile/brightest-minds" target="_blank" rel="noopener" title="Read our reviews on Clutch"><img src="img/award3.webp" alt="Clutch 4.9 out of 5 — read our reviews"></a><img src="img/award2.webp" alt="Forbes Technology Council official member"><img src="img/award1.webp" alt="Emblaze">
     </div>
   </div>
 </section>
@@ -569,8 +645,8 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line);margin-top:clamp
   <div class="wrap split">
     <div class="sec-head" style="margin:0"><span class="eyebrow">FAQ</span><h2>Questions buyers ask first.</h2></div>
     <div class="faq">
-      <details><summary>What do I get for $3,000 a month?</summary><p>Three SDRs with developed business profiles reaching out to your buyers, up to 600 targeted touches a week combined. That comes with AI deep research on your ICP &amp; UVP, data‑science prospect scoring, A/B tested messaging, weekly activity reports and coach support.</p></details>
-      <details><summary>How is this different from an AI SDR tool?</summary><p>We're not a tool. You get real SDRs, selected through our GTM Hackathons, who research your ICP and handle correspondence themselves. Our data science team analyzes 100s of patterns to point them at the prospects most likely to need your offer. A dedicated team lead works with them to test different go‑to‑market angles and push your reply rates as high as they can go.</p></details>
+      <details><summary>What do I get for $3,000 a month?</summary><p>An SDR team with developed business profiles that guarantees 1,000+ prospects engaged every month, typically 1,000–3,000. You also get AI deep research on your ICP &amp; UVP, weekly data science hackathons that keep improving who we target, A/B tested messaging, weekly activity reports and coach support.</p></details>
+      <details><summary>Why should I give you a chance?</summary><p>Because the risk is small and the upside is proven. You stay month‑to‑month, we guarantee 1,000+ prospects engaged every month, and every prospect is picked on 100s of behavior patterns that predict replies. Clients like GUIDEcx ($834K+ in ARR) and HyperC ($5M+ in pipeline) call us one of their best channels. <a href="cases.html">See the case studies</a>.</p></details>
       <details><summary>Which markets and time zones do you cover?</summary><p>USA and North America, Europe, and Asia including the Philippines.</p></details>
       <details><summary>How will I know what's happening?</summary><p>You get detailed activity reports covering outreach sent, acceptances, replies and booked meetings, so you always see what's working.</p></details>
       <details><summary>How do we get started?</summary><p>Book a free GTM brainstorming session. We'll map your ICP and offer, then propose the first messaging tests.</p></details>
@@ -582,7 +658,7 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line);margin-top:clamp
   <div class="final">
     <span class="eyebrow" style="color:inherit;opacity:.7">Free GTM brainstorming session</span>
     <h2>Let's fill your calendar this quarter.</h2>
-    <p>In 30 minutes we'll review your ICP and offer and sketch your first LinkedIn campaign.</p>
+    <p>In 30 minutes we'll review your ICP and offer and show you which prospect behavior patterns are most likely to reply to you.</p>
     <a class="btn btn-primary" href="https://calendly.com/anthony-brightestminds/30min" target="_blank" rel="noopener">Book a free strategy session →</a>
   </div>
 </div>
@@ -594,7 +670,7 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line);margin-top:clamp
     <div class="foot">
       <div><img class="wm" src="img/logo.svg" alt="BrightestMinds"><p style="color:var(--muted);max-width:34ch">AI‑powered LinkedIn SDRs for B2B teams that need pipeline now.</p></div>
       <div><h4>Services</h4><ul><li><a href="#how">LinkedIn outreach</a></li><li><a href="#how">Appointment setting</a></li><li><a href="#how">B2B lead generation</a></li></ul></div>
-      <div><h4>Follow</h4><ul><li><a href="https://www.linkedin.com/company/brightest-minds/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://x.com/Brightest_Minds" target="_blank" rel="noopener">X</a></li><li><a href="https://www.facebook.com/HireTheBrightestMinds/" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/brightestminds.io" target="_blank" rel="noopener">Instagram</a></li></ul></div>
+      <div><h4>Follow</h4><ul><li><a href="https://www.linkedin.com/company/brightest-minds/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://x.com/Brightest_Minds" target="_blank" rel="noopener">X</a></li><li><a href="https://www.facebook.com/HireTheBrightestMinds/" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/brightestminds.io" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://clutch.co/profile/brightest-minds" target="_blank" rel="noopener">Clutch reviews</a></li></ul></div>
       <div class="addr"><h4 style="margin:0">Offices</h4><span>611 Gateway Blvd, Suite 120<br>San Francisco, USA</span><span>77 Camden Street Lower<br>Dublin, Ireland</span><span class="mono" style="user-select:all">Hello@BrightestMinds.io</span></div>
     </div>
     <div class="legal"><span>© 2026 BrightestMinds. All rights reserved.</span><span><a href="https://bmteam.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> · <a href="https://bmteam.io/terms-of-service" target="_blank" rel="noopener">Terms &amp; Conditions</a></span></div>
@@ -605,19 +681,21 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line);margin-top:clamp
 (()=>{
   const $=id=>document.getElementById(id);
   const usd=n=>'$'+Math.round(n).toLocaleString('en-US');
-  const REQ=3*200*52/12, PRICE=3000;
-  const ids=['c-cost','c-acc','c-rep','c-bk'];
+  const PRICE=3000;
+  const ids=['c-vol','c-cost','c-acc','c-rep','c-bk'];
   function calc(){
     const cost=+$('c-cost').value, acc=+$('c-acc').value/100, rep=+$('c-rep').value/100, bk=+$('c-bk').value/100;
+    ids.forEach(id=>{const el=$(id);el.style.setProperty('--p',((el.value-el.min)/(el.max-el.min)*100)+'%');});
     $('o-cost').textContent=usd(cost);
     $('o-acc').textContent=Math.round(acc*100)+'%';
     $('o-rep').textContent=Math.round(rep*100)+'%';
     $('o-bk').textContent=Math.round(bk*100)+'%';
-    const mtg=REQ*acc*rep*bk;
+    const REQ=+$('c-vol').value; $('o-vol').textContent=REQ.toLocaleString('en-US'); const mtg=REQ*acc*rep*bk;
     $('r-mtg').textContent=mtg===0?'0':(mtg<10?mtg.toFixed(1):String(Math.round(mtg)));
     $('r-cpm').textContent=mtg>0?usd(PRICE/mtg):'—';
     $('r-save').textContent=usd(Math.max(0,(3*cost-PRICE)*12));
   }
+
   ids.forEach(id=>{const el=$(id); el.addEventListener('input',calc); el.addEventListener('change',calc);});
   $('calc').addEventListener('submit',e=>e.preventDefault());
   calc();
@@ -626,8 +704,6 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line);margin-top:clamp
 <script>
 (()=>{
   // duplicate marquee for seamless loop
-  const m=document.getElementById('marquee'); m.innerHTML+=m.innerHTML;
-  m.querySelectorAll('img').forEach((im,i)=>{ if(i>=15) im.alt=''; });
 
   // bars + counters
   requestAnimationFrame(()=>setTimeout(()=>{
@@ -639,36 +715,51 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line);margin-top:clamp
     });
   },150));
 
-  // illustrative feed
-  const ev=[
-    ['meet','Meeting booked','VP Sales · Series B fintech'],
-    ['reply','Reply','Head of RevOps · HR tech'],
-    ['acc','Accepted','CEO · 40‑person dev agency'],
-    ['meet','Meeting booked','CRO · logistics SaaS'],
-    ['acc','Accepted','Founder · AI analytics startup'],
-    ['reply','Reply','Head of Growth · edtech'],
-    ['acc','Accepted','VP Marketing · cybersecurity'],
-    ['meet','Meeting booked','COO · proptech scale‑up'],
-    ['reply','Reply','Director of Sales · martech'],
+  // hero calendar
+  const MEET=[
+    [0,9,'Head of IT','250‑person logistics co.',1],
+    [1,10,'CEO','40‑person dev agency',2],
+    [2,9,'COO','Series B fintech',3],
+    [0,13,'VP Sales','600‑person B2B SaaS',3],
+    [2,14,'CFO','800‑person manufacturer',1],
+    [3,11,'CTO','Healthtech scale‑up',1],
+    [1,15,'CMO','DTC e‑commerce brand',2],
+    [4,10,'CRO','1,200‑person security firm',2],
+    [3,15,'VP Ops','3PL logistics network',3],
+    [4,14,'CHRO','5,000‑person retailer',1],
+    [0,15,'Founder','AI analytics startup',2],
+    [1,12,'VP Eng','300‑person insurtech',3],
   ];
-  const feed=document.getElementById('feed'); let i=0, mins=2;
-  const add=()=>{
-    const [k,label,who]=ev[i%ev.length]; i++;
-    const li=document.createElement('li');
-    li.innerHTML=`<span class="tag ${k==='meet'?'meet':k==='reply'?'reply':''}">${label}</span><span class="who">${who}</span><span class="t">${mins}m</span>`;
-    feed.prepend(li); mins=Math.max(1,mins+ (Math.random()*3|0));
-    while(feed.children.length>6) feed.lastChild.remove();
-  };
-  for(let n=0;n<6;n++) add();
-  [...feed.children].forEach((li,n)=>li.querySelector('.t').textContent=(2+n*7)+'m');
+  const START=3, MAX=7;
+  const days=[...document.querySelectorAll('.cal-day')], cnt=document.getElementById('cal-count');
+  const fmt=h=>(h>12?h-12:h)+(h>=12?' PM':' AM');
+  let shown=0;
+  const place=(m,isNew)=>{const [d,h,role,co,c]=m;const el=document.createElement('div');
+    el.className='mtg c'+c+(isNew?' new':'');el.style.top='calc(34px + var(--row) * '+(h-9)+' + 2px)';el.style.height='calc(var(--row) - 4px)';
+    el.innerHTML='<b>'+role+'</b><span>'+co+'</span>';el.title=fmt(h)+' · '+role+' · '+co;
+    days[d].appendChild(el);document.querySelectorAll('.mtg.new').forEach(x=>{if(x!==el)x.classList.remove('new')});
+    shown++;cnt.textContent=shown;};
+  for(let i=0;i<START;i++) place(MEET[i],false);
   if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
-    setInterval(()=>{add();[...feed.children].forEach((li,n)=>li.querySelector('.t').textContent=n===0?'now':(n*7)+'m')},2600);
+    setInterval(()=>{
+      if(shown<MAX){place(MEET[shown],true);}
+      else{document.querySelectorAll('.mtg').forEach(x=>x.classList.add('out'));
+        setTimeout(()=>{document.querySelectorAll('.mtg').forEach(x=>x.remove());shown=0;for(let i=0;i<START;i++) place(MEET[i],false);},450);}
+    },2400);
   }
 
   // comparison table
-  const rows=[['Cost per connection',5,4,1],['Structured A/B testing',5,3,1],['LinkedIn scalability',5,2,3],['AI deep research on ICP & UVP',5,4,1],['Data science prospect scoring (100s of patterns)',5,2,2]];
+  const rows=[
+    ['Reply‑probability scoring on 100s of behavior patterns, weekly',5,3,3],
+    ['Prospects reached a month','1,000+, ranked by conversion score','Limited by each rep\'s time','High volume, rarely ranked'],
+    ['Who picks the prospects','A weekly data‑science hackathon','Each SDR, mostly by job title','Automated filters'],
+    ['Whose LinkedIn accounts','Our SDRs','Usually yours','Yours, connected to the tool'],
+    ['Blocking &amp; data risk','Low','Low','Risk of LinkedIn blocks; data sources often restricted for AI tools'],
+    ['Commitment','Month‑to‑month','Often 3–6 month contracts','Often annual contracts'],
+    ['Cost per connection',5,4,5],['LinkedIn scalability',5,2,3]];
   const dots=n=>`<span class="dots" aria-label="${n} of 5">${[1,2,3,4,5].map(k=>`<i class="${k<=n?'on':''}"></i>`).join('')}</span>`;
-  document.querySelector('#cmp tbody').innerHTML=rows.map(r=>`<tr><td>${r[0]}</td><td class="us">${dots(r[1])}</td><td>${dots(r[2])}</td><td>${dots(r[3])}</td></tr>`).join('');
+  const cell=v=>typeof v==='number'?dots(v):`<span class="ctext">${v}</span>`;
+  document.querySelector('#cmp tbody').innerHTML=rows.map(r=>`<tr><td>${r[0]}</td><td class="us">${cell(r[1])}</td><td>${cell(r[2])}</td><td>${cell(r[3])}</td></tr>`).join('');
 
 })();
 </script>
