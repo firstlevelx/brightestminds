@@ -247,6 +247,11 @@ section{padding-block:clamp(64px,9vw,120px)}
 .dm-wall li.more{grid-column:1 / -1;min-height:72px;display:flex;gap:.6rem;justify-content:center;align-items:center;background:linear-gradient(95deg,var(--hot-a),var(--hot-b));color:#fff;font-size:clamp(1rem,1.7vw,1.3rem)}
 .dm-wall li.more:hover{color:#fff}
 .dm-wall li.more .plus{font-size:1.6em;line-height:1}
+.dm-wall li.more{padding:0;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.dm-wall li.more:hover{transform:translateY(-2px);box-shadow:0 14px 30px -14px var(--hot-a)}
+.dm-wall li.more a{flex:1;align-self:stretch;display:flex;gap:.6rem;justify-content:center;align-items:center;color:inherit;text-decoration:none;padding:16px}
+.dm-wall li.more .arr{transition:transform .2s}
+.dm-wall li.more:hover .arr{transform:translateX(4px)}
 @media (max-width:860px){.dm-grid{grid-template-columns:1fr}}
 @media (max-width:420px){.dm-wall{grid-template-columns:repeat(2,1fr)}}
 .proofbar{padding-block:8px 0}
@@ -566,7 +571,7 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line);margin-top:clamp
     </div>
     <ul class="dm-wall" aria-label="Companies whose decision-makers we've booked meetings with">
       <li>Microsoft</li><li>Google</li><li>NVIDIA</li><li>Amazon</li><li>Databricks</li><li>Uber</li><li>Red&nbsp;Bull</li><li>Coca‑Cola</li><li>Pepsi</li><li>Heinz</li><li>Fujifilm</li><li>USP</li>
-      <li class="more"><span class="plus">+</span> 1,000s more decision‑makers, and counting</li>
+      <li class="more"><a href="cases.html"><span class="plus">+</span> 1,000s more decision‑makers, and counting <span class="arr" aria-hidden="true">→</span></a></li>
     </ul>
   </div>
 </section>
