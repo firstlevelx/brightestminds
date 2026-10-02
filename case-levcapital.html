@@ -27,7 +27,7 @@
 <meta name="twitter:title" content="LevCapital Case Study | BrightestMinds">
 <meta name="twitter:description" content="LevCapital: A $6M closed deal and $70M+ in sales opportunities. Senior real-estate decision-makers are hard to reach. Patient, personalized follow-ups…">
 <meta name="twitter:image" content="https://brightestminds.io/og-image.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://brightestminds.io/#org", "name": "BrightestMinds", "url": "https://brightestminds.io/", "logo": "https://brightestminds.io/logo.svg", "email": "Hello@BrightestMinds.io", "sameAs": ["https://www.linkedin.com/company/brightest-minds/", "https://x.com/Brightest_Minds", "https://www.facebook.com/HireTheBrightestMinds/", "https://www.instagram.com/brightestminds.io", "https://clutch.co/profile/brightest-minds"], "address": [{"@type": "PostalAddress", "streetAddress": "611 Gateway Blvd, Suite 120", "addressLocality": "San Francisco", "addressRegion": "CA", "addressCountry": "US"}, {"@type": "PostalAddress", "streetAddress": "77 Camden Street Lower", "addressLocality": "Dublin", "addressCountry": "IE"}]}, {"@type": "Article", "headline": "LevCapital: A $6M closed deal and $70M+ in sales opportunities", "description": "Senior real‑estate decision‑makers are hard to reach. Patient, personalized follow‑ups won 289 interested leads and one $6M deal.", "author": {"@id": "https://brightestminds.io/#org"}, "publisher": {"@id": "https://brightestminds.io/#org"}, "mainEntityOfPage": "https://brightestminds.io/case-levcapital.html", "image": "https://brightestminds.io/og-image.png", "about": {"@type": "Organization", "name": "LevCapital"}, "dateModified": "2026-10-01"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://brightestminds.io/"}, {"@type": "ListItem", "position": 2, "name": "Case studies", "item": "https://brightestminds.io/cases.html"}, {"@type": "ListItem", "position": 3, "name": "LevCapital", "item": "https://brightestminds.io/case-levcapital.html"}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://brightestminds.io/#org", "name": "BrightestMinds", "url": "https://brightestminds.io/", "logo": "https://brightestminds.io/logo.svg", "email": "Hello@BrightestMinds.io", "founder": {"@type": "Person", "name": "Vol Goloshuk", "jobTitle": "Founder, Advisor", "sameAs": "https://www.linkedin.com/in/goloshuk/"}, "employee": [{"@type": "Person", "name": "Anthony Infiesto", "jobTitle": "Chief Customer Officer", "sameAs": "https://www.linkedin.com/in/anthony-infiesto-mba/"}, {"@type": "Person", "name": "Tanya Ferenets", "jobTitle": "Head of GTM", "sameAs": "https://www.linkedin.com/in/tanya-ferenets-153040180/"}], "sameAs": ["https://www.linkedin.com/company/brightest-minds/", "https://x.com/Brightest_Minds", "https://www.facebook.com/HireTheBrightestMinds/", "https://clutch.co/profile/brightest-minds"], "address": [{"@type": "PostalAddress", "streetAddress": "611 Gateway Blvd, Suite 120", "addressLocality": "San Francisco", "addressRegion": "CA", "addressCountry": "US"}, {"@type": "PostalAddress", "streetAddress": "77 Camden Street Lower", "addressLocality": "Dublin", "addressCountry": "IE"}]}, {"@type": "Article", "headline": "LevCapital: A $6M closed deal and $70M+ in sales opportunities", "description": "Senior real‑estate decision‑makers are hard to reach. Patient, personalized follow‑ups won 289 interested leads and one $6M deal.", "author": {"@id": "https://brightestminds.io/#org"}, "publisher": {"@id": "https://brightestminds.io/#org"}, "mainEntityOfPage": "https://brightestminds.io/case-levcapital.html", "image": "https://brightestminds.io/og-image.png", "about": {"@type": "Organization", "name": "LevCapital"}, "dateModified": "2026-10-02"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://brightestminds.io/"}, {"@type": "ListItem", "position": 2, "name": "Case studies", "item": "https://brightestminds.io/cases.html"}, {"@type": "ListItem", "position": 3, "name": "LevCapital", "item": "https://brightestminds.io/case-levcapital.html"}]}]}</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -174,6 +174,33 @@ section{padding-block:clamp(64px,9vw,120px)}
 .b-us{background:color-mix(in srgb,var(--good) 14%,var(--surface));color:var(--ink);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--good) 40%,transparent)}
 .b-us .who{color:var(--good);opacity:1}
 @media (max-width:560px){.vs{grid-template-columns:1fr}}
+/* team */
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media (max-width:980px){.team-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.team-grid{grid-template-columns:1fr}}
+.tm{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:6px;align-content:start;text-decoration:none;color:inherit;min-width:0;transition:border-color .2s,transform .2s}
+
+.tm img{width:72px;height:72px;border-radius:50%;object-fit:cover;margin-bottom:10px;background:var(--sunk);box-shadow:0 0 0 3px var(--surface),0 0 0 5px color-mix(in srgb,var(--hot-a) 55%,var(--line))}
+.tm b,.tm-name{font:600 1.08rem var(--f-display)}
+.tm-name{color:var(--ink);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--hot-a) 45%,transparent);text-underline-offset:4px;text-decoration-thickness:2px;width:fit-content}
+.tm-name:hover{color:var(--cta);text-decoration-color:currentColor}
+.tm .role{font:500 .74rem var(--f-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--hot-a)}
+.tm p{color:var(--muted);font-size:.92rem;margin-top:6px}
+.tm .li{font-weight:600;font-size:.88rem;color:var(--cta);margin-top:8px}
+.tm-team{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tm-team p{color:color-mix(in srgb,var(--bg) 72%,transparent)}
+.tm-team .role{color:var(--hot-b)}
+.tm-icon{width:72px;height:72px;border-radius:50%;display:grid;place-items:center;margin-bottom:10px;background:linear-gradient(135deg,var(--hot-a),var(--hot-b));color:#fff;font:800 1rem var(--f-display);letter-spacing:.02em}
+.pod{margin-top:20px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);padding:18px 22px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.pod-label{font:500 .72rem var(--f-mono);text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.pod ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.pod li{position:relative;display:grid;gap:2px;padding:10px 26px 10px 12px;border-radius:10px;background:var(--sunk)}
+.pod li::after{content:"→";position:absolute;right:8px;top:50%;transform:translateY(-50%);color:var(--hot-a);font-weight:700}
+.pod li.end{background:color-mix(in srgb,var(--good) 14%,var(--surface))}
+.pod li.end::after{content:none}
+.pod li b{font-size:.88rem}
+.pod li span{font-size:.78rem;color:var(--muted)}
+@media (max-width:980px){.pod{grid-template-columns:1fr}.pod ol{grid-template-columns:1fr}.pod li::after{content:"↓";right:12px}}
 /* hero calendar */
 .cal{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:0 40px 80px -40px rgba(13,16,40,.35);overflow:hidden;min-width:0}
 .cal-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line)}
@@ -226,7 +253,7 @@ section{padding-block:clamp(64px,9vw,120px)}
 .proofbar{padding-block:8px 0}
 .pb-grid{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--line)}
 .pb{display:grid;gap:8px;align-content:start;padding:32px 24px 30px;border-right:1px solid var(--line);min-width:0}
-.pb:first-child{padding-left:0}.pb:last-child{border-right:0;padding-right:0}
+.pb:last-child{border-right:0}
 .pb b{font:800 clamp(2rem,3.4vw,2.9rem)/1 var(--f-display);letter-spacing:-.035em;font-variant-numeric:tabular-nums}
 .pb .what{font:600 1rem/1.35 var(--f-body)}
 .pb .who{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.86rem;margin-top:6px}
@@ -239,8 +266,8 @@ a.pb:hover .go{text-decoration:underline}
 .pb .who img{width:32px;height:32px;border-radius:50%;object-fit:cover;background:var(--sunk);flex:none}
 .pb .who .zm{width:32px;height:32px;border-radius:50%;overflow:hidden;flex:none;background:#fff}
 .pb .who .zm img{transform:scale(1.5);transform-origin:50% 35%;border-radius:0}
-@media (max-width:980px){.pb-grid{grid-template-columns:1fr 1fr}.pb{padding:26px 20px}.pb:nth-child(odd){padding-left:0}.pb:nth-child(2){border-right:0;padding-right:0}.pb:nth-child(-n+2){border-bottom:1px solid var(--line)}}
-@media (max-width:460px){.pb-grid{grid-template-columns:1fr}.pb{border-right:0!important;padding-inline:0!important;border-bottom:1px solid var(--line)}.pb:last-child{border-bottom:0}}
+@media (max-width:980px){.pb-grid{grid-template-columns:1fr 1fr}.pb{padding:26px 20px}.pb:nth-child(2){border-right:0}.pb:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media (max-width:460px){.pb-grid{grid-template-columns:1fr}.pb{border-right:0!important;padding:22px 16px;border-bottom:1px solid var(--line)}.pb:last-child{border-bottom:0}}
 /* ledger */
 .ledger{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
 .lrow{display:grid;grid-template-columns:72px 1.1fr 1fr 1fr 1.6fr;gap:20px;align-items:center;padding:20px 24px;border-bottom:1px solid var(--line)}
@@ -477,6 +504,7 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line);margin-top:clamp
       <li><a href="index.html#results">Results</a></li>
       <li><a href="cases.html">Case studies</a></li>
       <li><a href="index.html#how">How it works</a></li>
+      <li><a href="index.html#team">Team</a></li>
       <li><a href="index.html#pricing">Pricing</a></li>
       <li><a href="index.html#calculator">Calculator</a></li>
       <li><a href="index.html#compare">Compare</a></li>
@@ -520,7 +548,7 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line);margin-top:clamp
     <div class="foot">
       <div><img class="wm" src="logo.svg" alt="BrightestMinds"><p style="color:var(--muted);max-width:34ch">AI‑powered LinkedIn SDRs for B2B teams that need pipeline now.</p></div>
       <div><h4>Services</h4><ul><li><a href="index.html#how">LinkedIn outreach</a></li><li><a href="index.html#how">Appointment setting</a></li><li><a href="index.html#how">B2B lead generation</a></li></ul></div>
-      <div><h4>Follow</h4><ul><li><a href="https://www.linkedin.com/company/brightest-minds/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://x.com/Brightest_Minds" target="_blank" rel="noopener">X</a></li><li><a href="https://www.facebook.com/HireTheBrightestMinds/" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/brightestminds.io" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://clutch.co/profile/brightest-minds" target="_blank" rel="noopener">Clutch reviews</a></li></ul></div>
+      <div><h4>Follow</h4><ul><li><a href="https://www.linkedin.com/company/brightest-minds/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://x.com/Brightest_Minds" target="_blank" rel="noopener">X</a></li><li><a href="https://www.facebook.com/HireTheBrightestMinds/" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://clutch.co/profile/brightest-minds" target="_blank" rel="noopener">Clutch reviews</a></li></ul></div>
       <div class="addr"><h4 style="margin:0">Offices</h4><span>611 Gateway Blvd, Suite 120<br>San Francisco, USA</span><span>77 Camden Street Lower<br>Dublin, Ireland</span><span class="mono" style="user-select:all">Hello@BrightestMinds.io</span></div>
     </div>
     <div class="legal"><span>© 2026 BrightestMinds. All rights reserved.</span><span><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></span></div>
